@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum table</title>
+</head>
+<body>
+    <table>
+        <tbody>
+        <tr><th>Product</th><th>Cost</th></tr>
+        <tr><td>Beer</td>   <td>2.88</td></tr>
+        <tr><td>Fries</td>  <td>2.15</td></tr>
+        <tr><td>Burger</td> <td>4.59</td></tr>
+        <tr><td>Total:</td> <td id="sum"></td></tr>
+        </tbody>
+    </table>
+    <button onclick="sum()">Sum</button>
+
+    <script>
+        function sum() {
+            let tableTrElements =
+                document.querySelectorAll('table tr td');
+            let totalSum = 0;
+            for(let i = 1; i < tableTrElements.length; i+= 2) {
+                totalSum += Number(tableTrElements[i].textContent);
+            }
+
+            document.getElementById('sum').textContent = totalSum;
+        }
+    </script>
+</body>
+</html>
